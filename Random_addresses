@@ -1,0 +1,24 @@
+# Generate a list of random addresses in a CSV file
+
+import random
+import csv
+
+
+address = ["Street", "Road", "Lane", "Avenue", "Boulevard", "Court", "Drive"]
+number = range(23,900)
+direction = ["N", "S", "E", "W"]
+street_names = ["Main", "First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Appricot", "Smokey", "Pine", "Oak", "Maple", "Elm", "Willow", "Cedar", "Hill", "Crest", "Wood", "Creek", "Stream", "Meadow", "Springs", "Mounth", "Bluff", "Spring", "Summit", "Peak", "Valley", "Glade", "View", "Adeline", "Beech", "Birch", "Bush", "Cedar", "Cherry", "Pine", "Goodwin", "Haven", "Ewing", "Fairview", "Forrest", "Washington", "Lincoln", "Madison", "Florida", "Fort", "Franklin", "Fulton", "Garfield", "Glen", "Jackson", "Douglas"]
+
+
+
+def random_address():
+  return str(random.choice(number)) + " " + random.choice(direction) +  " " + random.choice(street_names) + " " + random.choice(address)
+
+for i in range(1,150):
+  print(random_address())
+
+#Export to CSV
+with open('addresses.csv', 'w', newline='') as file:
+    writer = csv.writer(file)
+    for i in range(1, 150):
+        writer.writerow([random_address()])
