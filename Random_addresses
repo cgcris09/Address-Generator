@@ -14,8 +14,6 @@ street_names = ["Main", "First", "Second", "Third", "Fourth", "Fifth", "Sixth", 
 def random_address():
   return str(random.choice(number)) + " " + random.choice(direction) +  " " + random.choice(street_names) + " " + random.choice(address)
 
-for i in range(1,150):
-  print(random_address())
 
 #Export to CSV
 with open('addresses.csv', 'w', newline='') as file:
